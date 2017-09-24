@@ -96,9 +96,9 @@ func main() {
 		server.ServeHTTP(w, r)
 	})
 	http.Handle("/", http.FileServer(http.Dir("./asset")))
-	PORT := "2000"
+	PORT := "2001"
 	log.Println("Serving at localhost:" + PORT + "...")
-	log.Fatal(http.ListenAndServe(":2000", nil))
+	log.Fatal(http.ListenAndServe(":"+PORT, nil))
 }
 
 func findPlayerIndexByID(ID string) int {
