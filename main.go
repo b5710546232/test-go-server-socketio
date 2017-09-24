@@ -91,7 +91,8 @@ func main() {
 
 	// http.Handle("/socket.io/", server)
 	http.HandleFunc("/socket.io/", func(w http.ResponseWriter, r *http.Request) {
-		w.Header().Set("Access-Control-Allow-Origin", "http://localhost:3000")
+		// http://localhost:3000
+		w.Header().Set("Access-Control-Allow-Origin", "true")
 		w.Header().Set("Access-Control-Allow-Credentials", "true")
 		server.ServeHTTP(w, r)
 	})
